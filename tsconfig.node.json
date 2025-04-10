@@ -5,6 +5,7 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types":["vite-plugin-svgr/client"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -13,6 +14,23 @@
     "moduleDetection": "force",
     "noEmit": true,
 
+        /* Absolute imports Paths*/
+        "baseUrl": "./",
+        "paths": {
+          "@assets/*":["src/assets/*"],
+          "@components/*":["src/components/*"],
+          "@hooks/*":["src/hooks/*"],
+          "@layouts/*":["src/layouts/*"],
+          "@pages/*":["src/pages/*"],
+          "@routes/*":["src/routes/*"],
+          "@store/*":["src/store/*"],
+          "@styles/*":["src/styles/*"],
+          "@utils/*":["src/utils/*"],
+          "@types/*":["src/types/*"],
+          "@api/*":["src/api/*"],
+          "@services/*":["src/services/*"],
+          "@context/*":["src/context/*"],
+        },
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
