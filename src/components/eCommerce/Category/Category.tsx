@@ -1,16 +1,26 @@
+import { Link } from 'react-router-dom';
 import ProductImage from './ProductImage';
 import styles from'./style.module.css';
-
 const {category,categoryImg,categoryTitle} = styles;
 
-const Category =()=>{
+
+interface IProps{
+    title:string;
+    img:string;
+    prefix:string;
+}
+
+const Category =({img,prefix,title}:IProps)=>{
 return (
 <div className={category}>
+    <Link to={`/product/${prefix}`}>
     <div className={categoryImg}>
-    <ProductImage srcImgs="https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692947383286-714WUJlhbLS._SL1500_.jpg"
-    altImgs='product1'/>
+    <ProductImage srcImgs={img}
+    altImgs={title}/>
     </div>
-    <h4 className={categoryTitle}>Title 1</h4>
+    <h4 className={categoryTitle}>{title}</h4>
+ 
+    </Link>
     </div>
 )
 }

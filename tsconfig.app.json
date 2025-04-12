@@ -30,6 +30,7 @@
       "@api/*":["src/api/*"],
       "@services/*":["src/services/*"],
       "@context/*":["src/context/*"],
+      "@customtypes/*":["src/types/*"]
     },
     /* Linting */
     "strict": true,

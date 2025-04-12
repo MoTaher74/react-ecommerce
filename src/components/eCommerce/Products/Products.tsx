@@ -1,17 +1,21 @@
 import { Button } from "react-bootstrap";
 import ProductImage from "../Category/ProductImage";
- 
 import styles from'./style.module.css';
 const {product,productImg} = styles;
-
-const Products =()=>{
+interface IProd{
+    id:number;
+    title:string;
+    img:string;
+    price:string
+}
+const Products =({id,img,price,title}:IProd)=>{
 return (
-<div className={product}>
+<div className={product} key={id}>
     <div className={productImg}>
-    <ProductImage srcImgs="https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692947383286-714WUJlhbLS._SL1500_.jpg" altImgs="product1"/>
+    <ProductImage srcImgs={img} altImgs={title}/>
     </div>
-    <h2>Title Product</h2>
-    <h3>Price : 10 EGP</h3>
+    <h2 title={title}>{title}</h2>
+    <h3>Price : {price}</h3>
     <Button variant="info" style={{color:"white"}}>Add to Cart</Button>
 </div>
 )

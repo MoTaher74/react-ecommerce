@@ -10,11 +10,11 @@ const router = createBrowserRouter([
         children:[
             {
                 index:true,
-                element:<Home title='Home Page' description='this is home page loading...'/>
+                element:<Home/>
             },
             {
                 path:"product/:prefix",
-                element:<Product title='Product Page with prefix' description='this is product page loading...'/>,
+                element:<Product/>,
                 loader:({params})=>{
                    if(typeof params.prefix !== "string" || !/^[a-z]+$/i.test(params.prefix)){
                     throw new Response("Bad Request",{
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
                  },
             },
             {
-                path:"product",
-                element:<Product title='Product Page' description='this is product page loading...'/>,
+                path:"/product",
+                element:<Product />,
 
             },
             {
